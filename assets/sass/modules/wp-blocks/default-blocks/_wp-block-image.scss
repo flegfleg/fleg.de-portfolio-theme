@@ -1,0 +1,8 @@
+//--------------------------------------------------------------
+// WordPress Default Image Block
+//--------------------------------------------------------------
+
+// Remove the left margin/padding.
+.wp-block-image {
+	margin-bottom: $gutter * 2;
+} // .wp-block-gallery

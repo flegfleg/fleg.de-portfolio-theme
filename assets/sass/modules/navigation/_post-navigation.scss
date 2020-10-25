@@ -1,0 +1,107 @@
+//--------------------------------------------------------------
+// Navigation on Comment, Post and Posts.
+//--------------------------------------------------------------
+.comment-navigation {
+  @include margin(null auto);
+  @include padding(null $gutter);
+
+  max-width: $max-width;
+
+  @include media($container-offset) {
+    @include padding(0);
+  }
+
+  .site-main & {
+    @include margin(0 0 $space);
+
+    overflow: hidden;
+  } // .site-main &
+} // .comment-navigation, .posts-navigation, .post-navigation
+
+.post-navigation {
+  @include margin(null auto);
+  @include padding(null $gutter);
+
+  max-width: $max-width;
+
+  .nav-links {
+    @include margin($space null null);
+    display: flex;
+    flex: 0 0 100%;
+    flex-flow: row wrap;
+    width: 100%; // For IE11.
+  } // .nav-links
+
+  .nav-previous {
+    @include size(50%, auto);
+
+    margin-right: auto;
+  } // &.nav-previous
+
+  .nav-next {
+    @include size(50%, auto);
+
+    margin-left: auto;
+    text-align: right;
+  } // &.nav-next
+}
+
+//-----------------------------------------
+// Numbered Pagination
+//-----------------------------------------
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  a {
+    border-bottom: none;
+    background-image: none;
+  }
+  .page-numbers {
+    margin: $gutter / 2;
+    &.current {
+      background-image: linear-gradient(to right, $color-text 50%, $color-text 50%); 
+      background-position: 0 1.4em;
+      background-repeat: repeat-x;
+      background-size: 4px 1px;
+    } // &.current
+  } // .page-numbers
+} // .pagination-container
+
+//-----------------------------------------
+// More button
+//-----------------------------------------
+
+.archive-link-container {
+	
+	text-align: center; 
+
+}
+
+//-----------------------------------------
+// More button
+//-----------------------------------------
+
+p.single-works-more-button {
+	text-align: center;
+	padding-top: $space;
+	a {
+		@extend .button;
+	}
+}
+
+ul.related-posts-navigation {
+	@include list-reset;
+	
+	
+	
+	li {
+		display: inline-block;
+		@extend .button;
+		// margin-left: $gutter;
+		a {
+			
+			border: 0;
+		}
+	}
+
+}

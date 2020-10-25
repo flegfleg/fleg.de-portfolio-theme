@@ -1,0 +1,117 @@
+//--------------------------------------------------------------
+// Site Content
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Posts and Pages
+//-----------------------------------------
+
+.entry-header, .page-header {
+	text-align: center;
+	h1 {
+		@extend .headline;
+	}
+
+	.page-title, .entry-title {
+		margin: 0 0 $gutter / 2 0;
+	}
+
+	margin-top: $space !important;
+	
+	.work-meta, .entry-meta {
+		@extend .subline;
+		margin-bottom: $space *2;
+	}
+}
+
+.entry-header-image {
+	text-align: center;
+	margin-bottom: $space * 2;
+	img {
+		max-height: 60vh; /* prevent portrait images from getting out of control */ 
+		width: auto;
+	}
+}
+
+// Entry Title
+.grid-layout .entry-title {
+	@extend .fat;
+} // .entry-title
+´
+.page-title {
+	font-size: $font-size-big;
+	font-weight: normal;
+}
+
+ .section-title {
+	 @extend .fat-nav;
+	 text-align: center;
+	 text-transform: uppercase;
+	 &.related {
+		 padding-top: $gutter * 2;
+		 margin-top: $gutter * 4;
+	 }
+ }
+
+// Sticy and Comments Link
+.sticky,
+.comments-link {
+	display: block;
+} // .sticky, .comments-link
+
+// hentry
+.hentry {
+	@include margin(0 0 $space 0);
+} // .hentry
+
+// Byline and update post date
+.byline,
+.updated:not(.published) {
+	display: none;
+} // .byline, .updated:not(.published)
+
+// Byline for single and group
+.single .byline,
+.group-blog .byline {
+	display: inline;
+} // .single .byline, .group-blog .byline
+
+// Page content, entry content and entry summary
+.page-content,
+.entry-content,
+.entry-footer,
+.entry-summary {
+	@include margin(0);
+	font-size: $font-size-content;
+} // .page-content, .entry-content, .entry-footer, .entry-summary
+
+// Page links
+.page-links {
+	@include margin(0 0 $space 0);
+
+	clear: both;
+} // .page-links
+
+// Tags links
+.tags-links {
+	margin-left: $space;
+} // .tags-links
+
+// Edit link
+.edit-link {
+	@include margin(0 0 0 rem(5));
+
+	a {
+		display: inline-block;
+		font-size: rem(12);
+		text-transform: lowercase;
+
+		&::before {
+			content: '(';
+		}
+
+		&::after {
+			content: ')';
+		}
+	} // a
+} // .edit-link

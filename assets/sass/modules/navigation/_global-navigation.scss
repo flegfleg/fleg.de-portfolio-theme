@@ -1,0 +1,68 @@
+//--------------------------------------------------------------
+// Global and Shared Navigation Styles.
+//--------------------------------------------------------------
+
+// Default menu (active after a fresh WordPress install).
+.menu {
+	@include list-reset;
+
+	ul {
+		@include list-reset;
+
+		// Dropdowns.
+		&.sub-menu {
+			@include padding(rem(10));
+
+			background: $color-background-submenu;
+
+			li {
+				@include margin(0);
+			} // li
+		} // &.sub-menu
+	} // ul
+
+	// For list items with menu items.
+	.menu-item-has-children {
+
+		.menu-item-has-children {
+
+			// Rotate to the right to point toward the direction of the dropdown.
+			.caret-down {
+				transform: rotate(-90deg) translateX(rem(2));
+			} // .caret-down
+		} // .menu-item-has-children
+	} // .menu-item-has-children
+
+	// Menu hyperlinks
+	a {
+		display: block;
+		text-decoration: none;
+		@extend .fat-nav;
+		background-image: none;
+		padding-bottom: 1px;
+		
+	} // a
+	// Current items
+	.current_page_item a,
+	.current-menu-item a,
+	.current-cat a,
+	.current-works_category-ancestor a,
+	.current-works-ancestor a {
+		background-image: linear-gradient(to right, $color-text 50%, $color-text 50%); 
+		
+		// font-weight: 600;
+	} // .current_page_item a, .current-menu-item a
+} // .menu
+
+//-----------------------------------------
+// Caret down.
+//-----------------------------------------
+.caret-down {
+	@include size(rem(20), rem(20));
+
+	background: url('assets/images/svg-icons/chevron-down.svg') no-repeat transparent;
+	background-size: 100%;
+	display: inline-block;
+	margin-left: rem(5);
+	vertical-align: middle;
+} // .angle-down

@@ -1,0 +1,72 @@
+//--------------------------------------------------------------
+// Header.
+//--------------------------------------------------------------
+
+.site-header {
+  width: 100%;
+  > div {
+    flex-direction: row;
+    align-items: center;
+    // font-family: $font-headline;
+    margin-top: $gutter;
+    text-transform: uppercase;
+  } // .site-header
+
+  // Site logo.
+  .site-branding {
+    margin-top: rem(4);
+    @include media($tablet-landscape) {
+      margin-top: 0;
+    }
+    img {
+      width: 50%;
+      height: auto;
+    }
+  } // .site-branding
+
+  //-----------------------------------------
+  // Site Title.
+  //-----------------------------------------
+  .site-title {
+    @extend .fat-nav;
+    margin: 0;
+    a {
+      border: 0;
+      background-image: none;
+    }
+  } // .site-title
+
+  //-----------------------------------------
+  // Site Description.
+  //-----------------------------------------
+  .site-description {
+    display: none;
+    @include margin(0 0 $space 0);
+
+    font-size: $space;
+
+    @include media($tablet-portrait, $tablet-landscape) {
+      clear: both;
+    }
+  } // .site-description
+
+  //-----------------------------------------
+  // Main Navigation Container.
+  //-----------------------------------------
+  .site-navigation-container {
+    flex-grow: 1;
+  }
+
+  //-----------------------------------------
+  // Main Navigation Container.
+  //-----------------------------------------
+  .main-navigation {
+    > ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      li {
+      }
+    }
+  } // .main-navigation
+} // .site-header

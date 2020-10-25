@@ -1,0 +1,30 @@
+//--------------------------------------------------------------
+// Global Link Styles
+//--------------------------------------------------------------
+
+a:not(.button) {
+	color: $color-text;
+	opacity: 1;
+	transition: $transition-opacity;
+	text-decoration: none;
+	
+	background-image: linear-gradient(to right, $color-text 50%, $color-text 50%); 
+	background-position: 0 1.4em;
+	background-repeat: repeat-x;
+	background-size: 4px 1px;
+
+	&:visited {
+		// color: $color-text;
+	} // &:visited
+
+	&:hover,
+	&:active {
+		opacity: 0.5;
+
+		// background-size: 8px 4px;
+	} // &:hover, &:active
+} // a
+
+a {
+	display: inline-block;
+}

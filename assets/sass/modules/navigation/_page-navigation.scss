@@ -1,0 +1,17 @@
+//--------------------------------------------------------------
+// Category nav and in-page jump nav.
+//--------------------------------------------------------------
+
+.works-category-nav {
+	
+	@include list-reset;
+	li {
+		@include margin(0 rem(10) 0 0);
+		display: inline-block;
+		a {
+			@extend .small-text;
+			text-transform: uppercase;
+		}
+	}
+	display: inline-block;
+}

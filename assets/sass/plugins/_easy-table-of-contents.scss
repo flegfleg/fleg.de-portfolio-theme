@@ -1,0 +1,12 @@
+// Styles for Easy Table of Contents
+// http://connections-pro.com/
+
+
+#ez-toc-container {
+	.ez-toc-title { display: none; }
+	text-align: center;
+	ul {
+		@extend .menu;
+		@extend .works-category-nav;
+	}
+}

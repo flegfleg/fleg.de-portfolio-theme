@@ -1,0 +1,131 @@
+//--------------------------------------------------------------
+// Base Layout
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Full-width Helper
+//-----------------------------------------
+.site-main {
+	@include margin(null null);
+
+	width: 100%;
+
+	&.acf-content-blocks {
+		@include margin(0 null);
+	} // &.acf-content-blocks
+
+	// Styles internal elements to max-width unless it's full-width.
+	> *:not(.full-width) {
+		@include margin($gutter * 2 auto);
+
+		max-width: $max-width;
+
+		&.container-width {
+			@include margin(0 auto);
+		} // &.container-width
+	} // > *:not(.full-width)
+
+	// Post elements.
+	.hentry {
+		@include margin($gutter auto $space * 2);
+
+		max-width: $max-width;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		} // &:last-child
+	} // .hentry
+
+	// Full-screen elements. Ignores sidebar issues.
+	.full-width:not(.content-block) {
+		@include full-width;
+	} // .full-width
+} // .site-main
+
+//-----------------------------------------
+// Bound Container at $container width
+//-----------------------------------------
+.container {
+	@include margin(null auto);
+	@include padding(null $gutter);
+
+	@include media($container-offset) {
+	.entry-content {
+		// Styles internal elements to max-width unless it's full-width.
+		> *:not(.alignwide):not(.alignfull) {
+			@include margin(null $gutter * 5);
+		} // > *:not(.full-width):not(.alignfull)
+	}
+}
+	max-width: $max-width;
+	position: relative;
+
+	@include media($container-offset) {
+		@include padding(0);
+	}
+} // .container
+
+// Adjusts padding for non-full-width content blocks with backgrounds.
+.content-block.has-background {
+
+	.container {
+
+		@include media($container-offset) {
+			padding-left: $gutter;
+			padding-right: $gutter;
+		}
+	}
+}
+
+//-----------------------------------------
+// Site Layout Wrapper and Grid Elements
+// and Grid Layout Wrapper
+//-----------------------------------------
+.site-wrapper,
+.display-flex {
+	display: flex;
+	flex: 0 0 100%;
+	flex-flow: row wrap;
+	width: 100%; // For IE11.
+
+	//-----------------------------------------
+	// Justification
+	//-----------------------------------------
+	&.justify-center {
+		justify-content: center; // Allows center elements without margin: 0 auto;
+	} // &.justify-center
+
+	&.space-between {
+		justify-content: space-between; // Allows space-between elements.
+	} // &.space-between
+
+	//-----------------------------------------
+	// Alignments
+	//-----------------------------------------
+	&.flex-start {
+		align-items: flex-start;
+	} // &.flex-start
+
+	&.align-center {
+		align-items: center;
+	} // &.align-center
+
+	//-----------------------------------------
+	// Grid Elements
+	//-----------------------------------------
+
+	// 50%.
+	.half {
+		@include half;
+	} // .half
+
+	// 33%.
+	.third {
+		@include third;
+	} // .third
+
+	// 25%
+	.quarter {
+		@include quarter;
+	} // .quarter
+}

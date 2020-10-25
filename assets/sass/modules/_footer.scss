@@ -1,0 +1,26 @@
+//--------------------------------------------------------------
+// Footer
+//--------------------------------------------------------------
+
+.site-footer {
+	@include padding($space null);
+	flex: 0 0 100%;
+	width: 100%;
+
+	.site-info {
+		text-align: center;
+		@extend .small-text;
+		text-transform: uppercase;
+		@include padding(null $gutter);
+	} // .site-info
+	.footer-widgets {
+		@include padding(null $gutter);
+		.widget {
+			width: 100%;
+			@include media($tablet-landscape) {
+				flex: 1 1 0;
+				padding-right: $gutter;
+			}
+		} // .widget
+	} // .footer-widgets
+}

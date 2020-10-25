@@ -1,0 +1,144 @@
+//--------------------------------------------------------------
+// Masonry - adapted from https://codepen.io/balazs_sziklai/pen/mOwoLg
+//--------------------------------------------------------------
+
+.grid-layout {
+
+
+	padding: 0;
+	max-width: 100%;
+
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	
+	.stamp {
+	  position: absolute;
+	  bottom: 0;
+	  right: 0;
+	}
+
+	article.grid-item {
+		margin: 0 0 $gutter 0;
+		padding: 0 $gutter * 2 $gutter * 2 $gutter * 2;
+		float: left;
+
+		// base (mobile: 100%)
+		width: 100%;	
+		&.span-1 { width: 100%;} 
+		&.span-2 { width: 100% } 
+		&.span-3 { width: 100% } 
+		&.span-4 { width: 100% } 
+		
+		@include media($tablet-portrait) {
+				width: 50%;	
+				&.span-1 { width: 50% } 
+				&.span-2 { width: 50% } 
+				&.span-3 { width: 100% } 
+				&.span-4 { width: 100% } 
+				padding: $gutter * 2;
+
+			&:nth-child(odd) { 
+				// margin-top: $gutter * 2;
+			}
+
+			&:first-of-type { 
+				// margin-top: 0;
+				// padding-top: 0;
+			}
+		}
+
+
+		@include media($tablet-landscape) {
+				width: 25%;	
+				&.span-1 { width: 25% } 
+				&.span-2 { width: 50% } 
+				&.span-3 { width: 75% } 
+				&.span-4 { width: 100% } 
+				padding: $gutter * 2;
+
+			&:nth-child(odd) { 
+				// margin-top: $gutter * 2;
+			}
+
+			&:first-of-type { 
+				// margin-top: 0;
+				// padding-top: 0;
+			}
+		}
+
+		/* Typography */
+
+		.entry-title {
+		
+			text-align: left;
+			font-size: $font-size-medium;
+			margin-bottom: $gutter / 4;
+		}
+
+		.work-meta, .entry-excerpt {
+			line-height: $line-height-body;
+			font-size: $font-size-small;
+			text-align: left;
+		}
+		
+		.small-text {
+			text-align: left;
+		}
+
+		a {
+			background-image: none;
+			display:block;
+			&.thumbnail-link {
+				text-align: center;
+			}
+		}
+
+		img {
+			margin-bottom: $gutter / 2;
+			max-height: 40vh;
+			width: auto;
+		}
+
+		body.home & {
+			// width: $span-2;
+			
+			// make the grid a bit more uniform on the home page
+			
+			&:nth-child(odd) { 
+				margin-top: 0;
+			}
+	
+			&:first-of-type { 
+				margin-top: inherit;
+				padding-top: inherit;
+			}
+
+			img {
+				// -webkit-filter: grayscale(1);
+				// filter: grayscale(1);
+				mix-blend-mode: luminosity;
+				// mix-blend-mode: multiply;
+				opacity: .5;
+			}
+		}
+
+		h2 {
+			margin: 0;
+		}
+	}
+
+}
+
+
+body.home {
+	a {
+	}
+	.page-title {
+		font-size: $font-size-mega;
+	}
+}
+
+
